@@ -14,19 +14,19 @@ const data = {
           "Good day"
         ],
         "responses": [
-          "Hey :)",
-          "Hello, thanks for visiting BITM Protrol",
-          "Hi there, what can I do for you?",
-          "Hi there, how can I help?"
+          "Hey 😊",
+          "Hello, thanks for visiting BITM Protrol 😊",
+          "Hi there, what can I do for you? 😄",
+          "Hi there, how can I help? 😄"
         ]
       },
       {
         "tag": "goodbye",
         "patterns": ["Bye", "See you later", "Goodbye"],
         "responses": [
-          "See you later, thanks for visiting",
-          "Have a nice day",
-          "Bye! Come back again soon."
+          "See you later, thanks for visiting 🤗",
+          "Have a nice day 🤗",
+          "Bye! Come back again soon. 🤗"
         ]
       },
       {
@@ -170,6 +170,17 @@ const data = {
         ],
         "responses":[
           " Dr. R N Kulkarni - HOD of CSE Dept. <br> Dr. K M Sadyojatha - HOD of ECE Dept. <br> Dr. Vidyavati - HOD of AIML "
+        ]
+      },
+        {
+        "tag": "Naveed",
+        "patterns":[
+          "Shaik Mohammed Naveed",
+          "Mohammed Naveed",
+            "Naveed"
+        ],
+        "responses":[
+          "He Was 2024 Passed Out Batch Student"
         ]
       },
       {
