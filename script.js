@@ -184,6 +184,17 @@ const data = {
         ]
       },
       {
+        "tag": "Mahika",
+        "patterns":[
+          "Mahika",
+          "Mahika Dhar",
+            "Minchu"
+        ],
+        "responses":[
+          "Also known Minchu Was 2024 Passed Out Batch Student, She was favourite Student of all the Staff. Most Kindful"
+        ]
+      },
+      {
         "tag": "Principal",
         "patterns":[
           "Principal",
