@@ -1,0 +1,3 @@
+var keywords = ['hello','founded', 'bitm', 'cse', 'the', 'computer', 'science', 'Artificial', 'Intelligence', 'and', 'college', 'ballari', 'institute', 'of', 'technology', 'management', 'principal', 'director', 'deputy', 'hod', 'faculties', 'faculty', 'experience', 'highest', 'package', 'campus', 'Naveed', 'Mahika', 'Students', 'student', 'good', 'fees', 'timings', 'bus', 'Engineering', 'Electrical', 'Mechanical', 'Electronics', 'Data', 'Who', 'What','When', 'What','Where', 'Which','Did', 'didn\'t', 'Does', 'do', 'don\'t', 'doesn\'t', 'had', 'how', 'much', 'payment','every','everyone', 'someone','somewhere', 'location', 'locality','place','new','existing','old','establised'];
+
+export default keywords;
