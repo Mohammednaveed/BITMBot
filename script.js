@@ -5,7 +5,7 @@ var data = {
   "intents": [
     {
       "patterns": ["bitm college located","Location of BITM College"],
-      "responses":"Jnana Gangotri Campus, Hospet Rd, near Allipura, Ballari, 583104"
+      "responses": ["Jnana Gangotri Campus, Hospet Rd, near Allipura, Ballari, 583104",]
     },
     {
       "tag": "greeting",
