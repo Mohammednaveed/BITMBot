@@ -192,7 +192,7 @@ var data = {
         "Minchu"
       ],
       "responses": [
-        "Also known Minchu Was 2024 Passed Out Batch Student, She was favourite Student of all the Staff."
+        "She Was 2024 Passed Out Batch Student."
       ]
     },
     {
@@ -250,6 +250,30 @@ var data = {
         "Dr. Rajkumar Nagnathrao Kulkarni (HOD) <br> Dr. Aradhana D (Ph. D) <br> Dr. RajaShree V Biradar (Ph. D) <br> Dr. Suresh Yeresime (Ph. D) <br> Dr. Anita S Patil <br> Muhibur Rahman T R <br> Venkateshwar Amingad <br> Phani Rama Prasad <br> Sreenivas Chinta Kalayalu <br> Swethashree A <br> Sheetal Janthakal <br> Sqathi D V <br> Prathiba Mishra <br> Lakshmi Sharma K M <br> Madhuri A <br> Kiran A MudaRaddi <br> Usman K <br> Sudhakar Avareddy <br> Shafiulla Mohammed <br> Dadapeer <br> Hayath T M <br> SriSaiLanath <br> Hari Krishana H <br> Virupaksha Gouda R <br> Sreenivas M <br> Vedavyas J <br> Chandrashekhar v <br> Narasimharaju Paka <br>"
       ]
     },
+    {
+        "patterns":["aiml faculties","aiml faculty","aiml teachers","aiml staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["EEE faculties","EEE faculty","EEE teachers","EEE staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["ECE faculties","ECE faculty","ECE teachers","ECE staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["Civil faculties","civil faculty","civil teachers","civil staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["data science faculties","data science faculty","data science teachers","data science staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["ME faculties","ME faculty","ME teachers","ME staff"],
+        "responses":["data will be updated soon!"]
+      },
   ]
 };
 const chatbox = document.getElementById("chatbox");
