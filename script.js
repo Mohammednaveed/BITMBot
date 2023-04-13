@@ -21,6 +21,32 @@ const data = {
         ]
       },
       {
+        "patterns":["aiml faculties","aiml faculty","aiml teachers","aiml staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["EEE faculties","EEE faculty","EEE teachers","EEE staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["ECE faculties","ECE faculty","ECE teachers","ECE staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["Civil faculties","civil faculty","civil teachers","civil staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["data science faculties","data science faculty","data science teachers","data science staff"],
+        "responses":["data will be updated soon!"]
+      },
+      {
+        "patterns":["ME faculties","ME faculty","ME teachers","ME staff"],
+        "responses":["data will be updated soon!"]
+      },
+
+
+      {
         "tag": "goodbye",
         "patterns": ["Bye", "See you later", "Goodbye"],
         "responses": [
@@ -191,7 +217,7 @@ const data = {
             "Minchu"
         ],
         "responses":[
-          "Also known Minchu Was 2024 Passed Out Batch Student, She was favourite Student of all the Staff."
+          " She was 2024 Passed Out Batch Student."
         ]
       },
       {
