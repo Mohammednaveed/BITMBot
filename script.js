@@ -33,14 +33,13 @@ var data = {
     {
       "tag": "payments",
       "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Can I pay with Paypal?",
-        "Are you cash only?"
+        "payment option",
+        "how can i pay",
+        "online payment is accepted ?",
+        "Is Cash Accepted"
       ],
       "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
+        "We accept VISA, Mastercard , UPI transaction too and Even we have any option for Payment Through Bank Beside our College"
       ]
     },
     {
