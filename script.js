@@ -1,6 +1,6 @@
 // import data from './datascript.mjs';
 // import keywords from './keywords.mjs';
-var keywords = ['hello','hi','he','she','they','them','located', 'bitm', 'cse', 'the', 'computer', 'science', 'artificial', 'intelligence', 'and', 'college', 'ballari', 'institute', 'of', 'technology', 'management', 'principal', 'director', 'deputy', 'hod', 'faculties', 'faculty', 'experience', 'highest', 'package', 'campus', 'naveed', 'mahika', 'Students', 'student', 'good', 'fees', 'timings', 'bus', 'engineering', 'electrical', 'mechanical', 'electronics', 'data', 'who', 'what', 'when', 'what', 'where', 'which', 'did', 'didn\'t', 'does', 'do', 'don\'t', 'doesn\'t', 'had', 'how', 'much', 'payment', 'every', 'everyone', 'someone', 'somewhere', 'location', 'locality', 'place', 'new', 'existing', 'old', 'established'];
+var ['and', 'artificial', 'ballari', 'bitm', 'bus', 'campus', 'college', 'computer', 'cse', 'data', 'deputy', 'did', "didn't", 'director', 'do', 'does', "doesn't", "don't", 'electrical', 'electronics', 'engineering', 'established', 'every', 'everyone', 'existing', 'experience', 'faculties', 'faculty', 'fees', 'good', 'had', 'he', 'hello', 'hi', 'highest', 'hod', 'how', 'institute', 'intelligence', 'locality', 'located', 'location', 'mahika', 'management', 'mechanical', 'much', 'naveed', 'new', 'of', 'old', 'package', 'payment', 'place', 'principal', 'science', 'she', 'someone', 'somewhere', 'student', 'students', 'technology', 'the', 'them', 'they', 'timings', 'what', 'what', 'when', 'where', 'which', 'who']
 var data = {
   "intents": [
     {
