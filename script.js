@@ -1,6 +1,6 @@
 // import data from './datascript.mjs';
 // import keywords from './keywords.mjs';
-var keywords = ['aiml','cv','me','eee','staff','and', 'artificial', 'ballari', 'bitm', 'bus', 'campus', 'college', 'computer', 'cse', 'data', 'deputy', 'did', "didn't", 'director', 'do', 'does', "doesn't", "don't", 'electrical', 'electronics', 'engineering', 'established', 'every', 'everyone', 'existing', 'experience', 'faculties', 'faculty', 'fees', 'good', 'had', 'he', 'hello', 'hi', 'highest', 'hod', 'how', 'institute', 'intelligence', 'locality', 'located', 'location', 'mahika', 'management', 'mechanical', 'much', 'naveed', 'new', 'of', 'old', 'package', 'payment', 'place', 'principal', 'science', 'she', 'someone', 'somewhere', 'student', 'students', 'technology', 'the', 'them', 'they', 'timings', 'what', 'what', 'when', 'where', 'which', 'who']
+var keywords = ['aiml', 'all', 'and', 'artificial', 'auditorium', 'ballari', 'bitm', 'bus', 'campus', 'class', 'classroom', 'college', 'computer', 'cse', 'cv', 'data', 'deputy', 'did', "didn't", 'director', 'do', 'does', "doesn't", "don't", 'eee', 'electrical', 'electronics', 'engineering', 'established', 'every', 'everyone', 'exams', 'existing', 'experience', 'faculties', 'faculty', 'fees', 'functions', 'good', 'had', 'he', 'hello', 'hi', 'highest', 'hod', 'how', 'institute', 'intelligence', 'kcet', 'locality', 'located', 'location', 'mahika', 'management', 'me', 'mechanical', 'much', 'name', 'naveed', 'new', 'of', 'old', 'package', 'payment', 'place', 'principal', 'programs', 'science', 'she', 'someone', 'somewhere', 'staff', 'student', 'students', 'teachers', 'technology', 'text', 'the', 'them', 'they', 'timings', 'what', 'what', 'when', 'where', 'which', 'who']
 var data = {
   "intents": [
     {
@@ -12,8 +12,8 @@ var data = {
       "patterns": [
         "hii", "hiii", "hiiii", "Hi", "Hey", "How are you", "Is anyone there?", "Hello", "Good day"
       ],
-      "responses": [
-        "Hey 😊", "Hello, thanks for visiting BITM Protrol 😊", "Hi there, what can I do for you? 😄", "Hi there, how can I help? 😄"
+      "responses": [  
+        "Hey", "Hello, thanks for visiting BITM Protrol", "Hi there, what can I do for you?", "Hi there, how can I help?"
       ]
     },
     {

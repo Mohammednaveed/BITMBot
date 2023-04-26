@@ -25,14 +25,28 @@
   }
   
   #chatbox {
-    height: 50vh;
+    width: 80vw;
+    height: 60vh;
     overflow-y: scroll;
     border: 1px solid #212422;
     padding: 10px;
     margin-bottom: 10px;
-    font-size: 80%;
+    font-size: 0.7em;
   }
   
+  /* For Mobile */
+@media screen and (max-width: 540px) {
+  #chatbox{
+    font-size: 50%;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  #chatbox{
+    font-size: 55%;
+  }
+}
   .message {
     display: flex;
     margin-bottom: 10px;
@@ -103,10 +117,19 @@
     height: 7vh;
     max-height: 7vh;
   }
-  @media only screen and (max-width: 768px) {
+  @media screen and (max-width: 844px) {
     footer {
       height: 20px;
     }
+    #chatbox {
+      width: 80vw;
+      height: 60vh;
+      overflow-y: scroll;
+      border: 1px solid #212422;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 10%;
+    }  
   }
   .container {
     display:inline-flex;
