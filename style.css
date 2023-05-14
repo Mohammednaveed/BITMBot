@@ -1,178 +1,30 @@
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1ac5bd;
-    font-size: 3vh;
-  }
-  
-  header {
-    background-color: #213137;
-    color: #fff;
-    padding: 10px;
-    background: linear-gradient(to bottom, #393f45, #111316);
-    color: #fff;
-    font-size: 1vh; 
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  #chatbox {
-    width: 80vw;
-    height: 60vh;
-    overflow-y: scroll;
-    border: 1px solid #212422;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 0.7em;
-  }
-  
-  /* For Mobile */
-@media screen and (max-width: 540px) {
-  #chatbox{
-    font-size: 50%;
-  }
-}
-
-/* For Tablets */
-@media screen and (min-width: 540px) and (max-width: 780px) {
-  #chatbox{
-    font-size: 55%;
-  }
-}
-  .message {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  
-  .message p {
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 70%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    
-  }
-  
-  .received p {
-    background-color: #2f2b2b;
-    align-self: flex-start;
-  }
-  
-  .sent p {
-    background-color: #f6f9fb;
-    color: #1e1b1b;
-    align-self: flex-end;
-  }
-  
-  #input {
-    /* display: flex; */
-    align-items: center;
-    padding: 10px;
-    background-color: #161717;
-  }
-  
-  #message {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #160f0f;
-    border-radius: 4px;
-    margin-right: 1px;
-  }
-  
-  #send {
-    background-color: #e5eaee;
-    color: #120f0f;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    
-  }
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0.8;
-    background-color: #0f0f0f;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: -2vh;
-    color: wheat;
-}
-  footer {
-    background-color: brown;
-    padding: 5px;
-    text-align: center;
-    font-size: 2vh;
-    background: linear-gradient(to bottom, #323537, #06090c);
-    font-size: 2vh;
-    height: 7vh;
-    max-height: 7vh;
-  }
-  @media screen and (max-width: 844px) {
-    footer {
-      height: 20px;
-    }
-    #chatbox {
-      width: 80vw;
-      height: 60vh;
-      overflow-y: scroll;
-      border: 1px solid #212422;
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 10%;
-    }  
-  }
-  .container {
-    display:inline-flex;
-    max-width: 80vw;
-    margin: 0 auto;
-    font-size: 2vh;
-    height: 6vh;
-    max-height: 7vh;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-  }
-  
-  li {
-    display: inline-block;
-    margin: 0 5px;
-  }
-  
-  
-  a:hover {
-    text-decoration: underline;
-  }
-.bi-youtube {
-    color: red;
-}
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color:#fff;
-  }
-header a {
-    color: #fff;
-    font-size: 1rem;
-}
-  header img {
-    height: 35px;
-    margin-right: 1vw;
-  }
+#chatbox,.message{margin-bottom:20px}*,ul{margin:0;padding:0}
+#chatbox,#input,#message,#send,.message p{padding:10px}
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;background-color:#1ac5bd;font-size:3vh}
+header{background:linear-gradient(to bottom,#393f45,#111316);font-size:1vh}
+h1{font-size:2rem}
+.container,footer{font-size:2vh;max-height:7vh}
+#chatbox{width:80vw;height:60vh;overflow-y:scroll;border:1px solid #212422;font-size:.7em}
+@media screen and (max-width:540px){#chatbox{font-size:50%}}
+@media screen and (min-width:540px) and (max-width:780px){#chatbox{font-size:55%}}
+.message{display:flex}
+.message p{border-radius:10px;max-width:70%;box-shadow:0 2px 4px rgba(0,0,0,.2)}
+.received p{background-color:#2c2727;align-self:flex-start}
+.sent p{background-color:#f6f9fb;color:#1e1b1b;align-self:flex-end}
+#input{align-items:center;background-color:#161717}
+#message{flex:1;border:1px solid #160f0f;border-radius:4px;margin-right:1px}
+#send{background-color:#e5eaee;color:#120f0f;border:none;border-radius:4px;cursor:pointer}
+footer{position:fixed;bottom:0;left:0;width:100%;opacity:.8;padding:5px;margin-bottom:-2vh;color:wheat;
+  background-color:brown;text-align:center;background:linear-gradient(to bottom,#323537,#06090c);height:7vh}
+@media screen and (max-width:844px){footer{height:20px}
+#chatbox{width:80vw;height:60vh;overflow-y:scroll;border:1px solid #212422;padding:10px;margin-bottom:10px;
+  font-size:10%}}
+.container{display:inline-flex;max-width:80vw;margin:0 auto;height:6vh}
+ul{list-style:none}li{display:inline-block;margin:0 5px}
+a:hover{text-decoration:underline}
+.bi-youtube{color:red}
+header{display:flex;align-items:center;justify-content:space-between;background-color:#fff;
+  box-shadow:0 2px 4px rgba(0,0,0,.1);color:#fff}
+header a{color:#fff;font-size:1rem}
+header img{height:60px;}

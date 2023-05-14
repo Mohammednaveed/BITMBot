@@ -1,6 +1,6 @@
 // import data from './datascript.mjs';
 // import keywords from './keywords.mjs';
-var keywords = ['aiml', 'all', 'and', 'artificial', 'auditorium', 'ballari', 'bitm', 'bus', 'campus', 'class', 'classroom', 'college', 'computer', 'cse', 'cv', 'data', 'deputy', 'did', "didn't", 'director', 'do', 'does', "doesn't", "don't", 'eee', 'electrical', 'electronics', 'engineering', 'established', 'every', 'everyone', 'exams', 'existing', 'experience', 'faculties', 'faculty', 'fees', 'functions', 'good', 'had', 'he', 'hello', 'hi', 'highest', 'hod', 'how', 'institute', 'intelligence', 'kcet', 'locality', 'located', 'location', 'mahika', 'management', 'me', 'mechanical', 'much', 'name', 'naveed', 'new', 'of', 'old', 'package', 'payment', 'place', 'principal', 'programs', 'science', 'she', 'someone', 'somewhere', 'staff', 'student', 'students', 'teachers', 'technology', 'text', 'the', 'them', 'they', 'timings', 'what', 'what', 'when', 'where', 'which', 'who']
+var keywords = ['aiml', 'all', 'and', 'artificial', 'auditorium', 'ballari', 'bitm', 'bus', 'campus', 'class', 'classroom', 'college', 'computer', 'cse', 'cv', 'data', 'deputy', 'dhar', 'did', "didn't", 'director', 'do', 'does', "doesn't", "don't", 'eee', 'electrical', 'electronics', 'engineering', 'established', 'every', 'everyone', 'exams', 'existing', 'experience', 'faculties', 'faculty', 'fees', 'functions', 'good', 'had', 'he', 'hello', 'hi', 'highest', 'hod', 'how', 'institute', 'intelligence', 'kcet', 'locality', 'located', 'location', 'mahika', 'management', 'me', 'mechanical', 'minchu', 'much', 'name', 'naveed', 'new', 'of', 'old', 'package', 'payment', 'place', 'principal', 'programs', 'science', 'she', 'someone', 'somewhere', 'staff', 'student', 'students', 'teachers', 'technology', 'text', 'the', 'them', 'they', 'timings', 'what', 'what', 'when', 'where', 'which', 'who']
 var data = {
   "intents": [
     {
@@ -218,7 +218,7 @@ var data = {
     {
       "tag": "DD",
       "patterns": [
-        "DD",
+        "DD bitm",
         "Deputy Director",
         "Deputy Director of BITM"
       ],
@@ -231,7 +231,7 @@ var data = {
       "patterns": [
         "Faculites",
         "Faculite",
-        "Faculites of BITM"
+        "Faculites of BITM", "staff bitm","teachers bitm"
       ],
       "responses": [
         "Which Dept. Faculties do you need? <br> Try Typing <br> Faculty of CSE <br> EEE Faculty <br> ECE Faculty <br> ME Faculty <br> AIML Faculty."
@@ -243,7 +243,7 @@ var data = {
         "CSE Faculties",
         "Faculties of CSE",
         "Faculty of CSE",
-        "Teachers of CSE",
+        "staff of CSE",
         "Teacher of CSE"
       ],
       "responses": [
@@ -279,29 +279,52 @@ var data = {
 const chatbox = document.getElementById("chatbox");
 const messageInput = document.getElementById("message");
 const sendButton = document.getElementById("send");
-
+var len1,len2;
+messageInput.addEventListener("keypress",event => {
+  if(event.code === "Space"){
+      var messarray = [];
+    var message = messageInput.value.trim();
+    const qwords = message.toLowerCase().split(/\W+/);
+    len2 = qwords.length
+    console.log(len2);
+    if (len1 !== len2){
+      var len3 = len1
+      for (let mes of qwords){
+        if (len3>0){
+          messarray.push(mes);
+          len3 = len3-1;
+        }
+        else
+          messarray.push(correct(mes));
+      }
+      messageInput.value = messarray.join(' ');
+      len1=len2;
+    }
+  }
+})
 sendButton.addEventListener("click", () => {
   var messarray = [];
   var message = messageInput.value.trim();
-  console.log(message)
   const qwords = message.toLowerCase().split(/\W+/);
   for (let mes of qwords)
-    messarray.push(correct(mes));
+    messarray.push(mes);
   message = messarray.join(' ');
-  console.log(message)
   if (message) {
     const messageElement = document.createElement("div"); //Select sent message div and print in ChatBox
     messageElement.classList.add("message", "sent");
     messageElement.innerHTML = `<p>${message}</p>`;
     chatbox.appendChild(messageElement);
-
+    // const messagerec = document.getElementsByName("message received");
     const messagerec = document.createElement("div"); // Print the Result of Question in ChatBox
     messagerec.classList.add("message", "received");
-    messagerec.innerHTML = `<p>${'BITM: <br>' + matchQuestion(message)}</p>`; // Calling Function
+    messagerec.innerHTML = `<div align="right" > <p>${'<br>' + matchQuestion(message)}</p> </div>`; // Calling Function
     chatbox.appendChild(messagerec);
-
+ 
     chatbox.scrollTop = chatbox.scrollHeight;
     messageInput.value = "";
+    len1 =0;
+    len2 =0;
+    addbuttons(message);
   }
 });
 
@@ -310,6 +333,10 @@ messageInput.addEventListener("keyup", (event) => {
     sendButton.click();
   }
 });
+
+function addbuttons(str1){
+
+}
 // function correct(word) {
 //   var resp = "";
 //   var largesimilarity = 0.0;
