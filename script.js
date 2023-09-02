@@ -1,4 +1,4 @@
-import {default as data,keywords,patterns} from './data.mjs';
+import {patterns,keywords,data } from './data.js';
 const chatbox = document.getElementById("chatbox");
 const messageInput = document.getElementById("message");
 const sendButton = document.getElementById("send");
