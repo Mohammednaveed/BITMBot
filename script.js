@@ -1,6 +1,61 @@
 // import data from './datascript.mjs';
 // import keywords from './keywords.mjs';
 var keywords = ['aiml', 'all', 'and', 'artificial', 'auditorium', 'ballari', 'bitm', 'bus', 'campus', 'class', 'classroom', 'college', 'computer', 'cse', 'cv', 'data', 'deputy', 'dhar', 'did', "didn't", 'director', 'do', 'does', "doesn't", "don't", 'eee', 'electrical', 'electronics', 'engineering', 'established', 'every', 'everyone', 'exams', 'existing', 'experience', 'faculties', 'faculty', 'fees', 'functions', 'good', 'had', 'he', 'hello', 'hi', 'highest', 'hod', 'how', 'institute', 'intelligence', 'kcet', 'locality', 'located', 'location', 'mahika', 'management', 'me', 'mechanical', 'minchu', 'much', 'name', 'naveed', 'new', 'of', 'old', 'package', 'payment', 'place', 'principal', 'programs', 'science', 'she', 'someone', 'somewhere', 'staff', 'student', 'students', 'teachers', 'technology', 'text', 'the', 'them', 'they', 'timings', 'what', 'what', 'when', 'where', 'which', 'who']
+var patterns = [
+  "Where is BITM College located?",
+  "What payment options are available?",
+  "How can I make a payment?",
+  "Is online payment accepted?",
+  "Tell me more about BITM.",
+  "When was BITM established and who founded the college?",
+  "Tell me about the courses offered in BITM.",
+  "What courses are available in BITM?",
+  "Can you provide information about the courses offered?",
+  "What are the available courses in BITM?",
+  "Tell me about the Computer Science and Engineering course.",
+  "Can you provide information about the Computer Science course?",
+  "Tell me more about Computer Science.",
+  "What can you tell me about Computer Science and Engineering?",
+  "Tell me about Electrical and Electronics Engineering.",
+  "Can you provide information about the Electrical Engineering course?",
+  "Tell me more about Electrical and Electronics Engineering.",
+  "What can you tell me about Electrical and Electronics Engineering?",
+  "Tell me about Electronics and Communication Engineering.",
+  "Can you provide information about Electronics and Communication Engineering?",
+  "Tell me more about Electronics and Communication Engineering.",
+  "Tell me about Mechanical Engineering.",
+  "Can you provide information about the Mechanical Engineering course?",
+  "Tell me more about Mechanical Engineering.",
+  "Tell me about Civil Engineering.",
+  "Can you provide information about the Civil Engineering course?",
+  "Tell me more about Civil Engineering.",
+  "Tell me about Artificial Intelligence and Engineering.",
+  "Can you provide information about Artificial Intelligence?",
+  "Tell me more about Artificial Intelligence.",
+  "What can you tell me about Artificial Intelligence and Engineering?",
+  "Tell me about Data Science and Engineering.",
+  "Can you provide information about the Data Science and Engineering course?",
+  "Tell me more about Data Science.",
+  "What can you tell me about Data Science and Engineering?",
+  "Who are the Heads of Departments?",
+  "Can you provide a list of the Head of Departments?",
+  "Who are the faculties in the Computer Science and Engineering department?",
+  "Can you list the faculties in the Computer Science and Engineering department?",
+  "Tell me about the faculty in the Computer Science and Engineering department.",
+  "Who are the staff members in the Computer Science and Engineering department?",
+  "Can you provide information about the teachers in the Computer Science and Engineering department?",
+  "Who are the faculties in the Artificial Intelligence and Engineering department?",
+  "Can you list the faculties in the Artificial Intelligence and Engineering department?",
+  "Who are the faculties in the Electrical and Electronics Engineering department?",
+  "Can you list the faculties in the Electrical and Electronics Engineering department?",
+  "Who are the faculties in the Electronics and Communication Engineering department?",
+  "Can you list the faculties in the Electronics and Communication Engineering department?",
+  "Who are the faculties in the Civil Engineering department?",
+  "Can you list the faculties in the Civil Engineering department?",
+  "Who are the faculties in the Data Science and Engineering department?",
+  "Can you list the faculties in the Data Science and Engineering department?"
+];
+
 var data = {
   "intents": [
     {
@@ -288,7 +343,7 @@ messageInput.addEventListener("keypress",event => {
     len2 = qwords.length
     console.log(len2);
     if (len1 !== len2){
-      var len3 = len1
+      var len3 = len1;
       for (let mes of qwords){
         if (len3>0){
           messarray.push(mes);
@@ -302,7 +357,11 @@ messageInput.addEventListener("keypress",event => {
     }
   }
 })
-sendButton.addEventListener("click", () => {
+sendButton.addEventListener("click",()=>{
+  sendmessage();
+});
+
+function sendmessage(){
   var messarray = [];
   var message = messageInput.value.trim();
   const qwords = message.toLowerCase().split(/\W+/);
@@ -325,8 +384,9 @@ sendButton.addEventListener("click", () => {
     len1 =0;
     len2 =0;
     addbuttons(message);
+    // addButtonsWithDelay(message);
   }
-});
+}
 
 messageInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
@@ -334,9 +394,53 @@ messageInput.addEventListener("keyup", (event) => {
   }
 });
 
-function addbuttons(str1){
+ // Call the function to add buttons with the desired delay and animation
 
+function addbuttons(str1){
+  var msg = str1;
+  addoptionsstring = [];
+  for(let pattern of patterns){
+    if(getSimilarity(str1,pattern)>0.15)
+    addoptionsstring.push(pattern);
+    console.log(getSimilarity(str1,pattern));
+  }
+  if(addoptionsstring.length>0){
+    
+    for(var i=0;i<addoptionsstring.length;i++){
+      const newButton = document.createElement('button')  ;
+      newButton.innerText = addoptionsstring[i];
+      newButton.classList.add('btn', 'btn-outline-secondary', 'animate__animated', 'animate__fadeIn', 'delay-2s');
+      newButton.addEventListener('click', () => {
+        respond(newButton.innerText);
+        });
+        chatbox.appendChild(newButton);
+        if(i==3)
+          break;
+    }
+  }
 }
+function respond(data){
+  var message= data;
+  if (message) {
+    const messageElement = document.createElement("div"); //Select sent message div and print in ChatBox
+    messageElement.classList.add("message", "sent");
+    messageElement.innerHTML = `<p>${message}</p>`;
+    chatbox.appendChild(messageElement);
+    // const messagerec = document.getElementsByName("message received");
+    const messagerec = document.createElement("div"); // Print the Result of Question in ChatBox
+    messagerec.classList.add("message", "received");
+    messagerec.innerHTML = `<div align="right" > <p>${'<br>' + matchQuestion(message)}</p> </div>`; // Calling Function
+    chatbox.appendChild(messagerec);
+    chatbox.scrollTop = chatbox.scrollHeight;
+    messageInput.value = "";
+    len1 =0;
+    len2 =0;
+  }
+}
+var clearscreen = document.getElementById("cls");
+clearscreen.addEventListener("click",()=>{
+  chatbox.textContent="";
+})
 // function correct(word) {
 //   var resp = "";
 //   var largesimilarity = 0.0;
@@ -357,12 +461,13 @@ function addbuttons(str1){
   
 //   return resp;
 // }
+
 function correct(word){
   if(keywords.includes(word.toLowerCase()))
       return word
   var match = stringSimilarity.findBestMatch(word.toLowerCase(),keywords);
   var rate = match['bestMatch']['rating'];
-  console.log(rate)
+  // console.log(rate)
   var target = match['bestMatch']['target'];
   if(rate>0.3)
       return target
@@ -375,6 +480,7 @@ function getletterSimilarity(word1, dictword) {
   const union = new Set([...letr1, ...letr2]);
   return intersection.size / union.size;
 }
+
 function getSimilarity(str1, str2) {
   const words1 = str1.toLowerCase().split(/\W+/);
   const words2 = str2.toLowerCase().split(/\W+/);
@@ -385,6 +491,9 @@ function getSimilarity(str1, str2) {
 
 function getRandomResponse(responses) {
   return responses[Math.floor(Math.random() * responses.length)];
+}
+function getRandompatterns() {
+  return patterns[Math.floor(Math.random() * patterns.length)];
 }
 
 function matchQuestion(question) {
