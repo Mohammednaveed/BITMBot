@@ -363,7 +363,7 @@ messageInput.addEventListener("keypress",event => {
           len3 = len3-1;
         }
         else
-          messarray.push(correct(mes));
+          messarray.push(mes);
       }
       messageInput.value = messarray.join(' ');
       len1=len2;
