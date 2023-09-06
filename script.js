@@ -408,7 +408,8 @@ messageInput.addEventListener("keyup", (event) => {
 });
 
  // Call the function to add buttons with the desired delay and animation
- for(var i=0;i<3;i++){
+ function randombuttons(n){
+ for(var i=0;i<n;i++){
   const newButton = document.createElement('button')  ;
   newButton.innerText = getRandompatterns();
   newButton.classList.add('btn', 'btn-outline-success', 'animate__animated', 'animate__fadeIn', 'delay-2s');
@@ -417,8 +418,9 @@ messageInput.addEventListener("keyup", (event) => {
     });
     chatbox.appendChild(newButton);
  }
+}
+randombuttons(3);
 function addbuttons(str1){
-  var msg = str1;
   addoptionsstring = [];
   for(let pattern of patterns){
     if(getSimilarity(str1,pattern)>0.15)
@@ -427,6 +429,7 @@ function addbuttons(str1){
   }
   if(addoptionsstring.length>0){
     for(var i=0;i<addoptionsstring.length;i++){
+      if(i<2){
       const newButton = document.createElement('button')  ;
       newButton.innerText = addoptionsstring[i];
       newButton.classList.add('btn', 'btn-outline-success', 'animate__animated', 'animate__fadeIn', 'delay-2s');
@@ -434,9 +437,9 @@ function addbuttons(str1){
         respond(newButton.innerText);
         });
         chatbox.appendChild(newButton);
-        if(i==3)
-          break;
+      }
     }
+    randombuttons(2);
   }
 }
 function respond(data){
